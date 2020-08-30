@@ -16,8 +16,8 @@ public class POIExcelReadHigh {
     /**
      * POI 读取高版本Excel文件
      *
-     * @author yangtingting
-     * @date 2019/07/29
+     * @param args
+     * @throws Exception
      */
     public static void main(String[] args) throws Exception {
         writeExcel();
@@ -85,7 +85,7 @@ public class POIExcelReadHigh {
         List<Map<String, Object>> list = readExcel();
         //追加数据
         for (int i = 1; i < list.size(); i++) {
-            Map<String,Object> map = list.get(i);
+            Map<String, Object> map = list.get(i);
             Row nextrow = sheet.createRow(i);
             Cell cell2 = nextrow.createCell(0);
             cell2.setCellValue(map.get("name").toString());
